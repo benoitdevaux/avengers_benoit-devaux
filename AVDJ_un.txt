@@ -1,1 +1,8 @@
 symfony new avengers_benoit-devaux //Création du projet
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle //Installation/Mise à jour Doctrine
+php bin/console doctrine:database:create //Création de la base de données
+php bin/console make:entity //Création de l'entité "marque-page"
+php bin/console make:migration //Créer une migration
+php bin/console doctrine:migration:migrate //Migration des entités vers la base de données (création des tables)
+php bin/console make:controller marquePage //Création du contrôleur MarquePageController
