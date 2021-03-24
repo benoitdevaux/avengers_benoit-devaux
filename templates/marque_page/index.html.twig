@@ -1,0 +1,17 @@
+<table  style="border-collapse: collapse; border: 2px solid #000">
+    <thead>
+        <tr>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">Url</th>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">Commentaire</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for marquePage in marquePages %}
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ marquePage.getUrl() }}</td>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ marquePage.getCommentaire()}}</td>   
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
