@@ -31,7 +31,7 @@ class MarquePageController extends AbstractController
     {
         $marquePage = new MarquePage();
         $marquePage->setUrl("https://symfony.com");
-        $marquePage->setDateCreation(new \DateTime(2021-03-30));
+        $marquePage->setDateCreation(new \DateTime());
         $marquePage->setCommentaire("Vers le site de Symfony");
         
         $entityManager = $this->getDoctrine()->getManager();
