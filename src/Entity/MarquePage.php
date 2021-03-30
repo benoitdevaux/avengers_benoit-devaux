@@ -3,7 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\MarquePageRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @ORM\Entity(repositoryClass=MarquePageRepository::class)
@@ -49,12 +51,12 @@ class MarquePage
         return $this;
     }
 
-    public function getDateCreation(): ?\DateTimeInterface
+    public function getDateCreation(): ?DateTime
     {
         return $this->date_creation;
     }
 
-    public function setDateCreation(\DateTimeInterface $date_creation): self
+    public function setDateCreation(DateTime $date_creation): self
     {
         $this->date_creation = $date_creation;
 

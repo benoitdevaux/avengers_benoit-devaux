@@ -11,16 +11,35 @@ use Doctrine\ORM\EntityManagerInterface;
 class MarquePageController extends AbstractController
 {
     /**
-     * @Route("/marque/page", name="marque_page")
-     */
+    * @Route("/marque_page", name="marque_page")
+    */
     public function index(): Response
     {
         $marquePages = $this->getDoctrine()
         ->getRepository(MarquePage::class)
         ->findAll();
-
+        
         return $this->render('marque_page/index.html.twig', [
             'marquePages' => $marquePages,
-        ]);
+            ]);
     }
+        
+    /**
+    * @Route("/marque_page/ajouter", name="add_marque_page")
+    */
+    public function ajouterMarquePage(): Response
+    {
+        $marquePage = new MarquePage();
+        $marquePage->setUrl("https://symfony.com");
+        $marquePage->setDateCreation(new \DateTime(2021-03-30));
+        $marquePage->setCommentaire("Vers le site de Symfony");
+        
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($marquePage);
+        $entityManager->flush();
+        
+        return new Response("Marque page enregistré avec l'id ".$marquePage->getId());
+    }
+        
 }
+    
