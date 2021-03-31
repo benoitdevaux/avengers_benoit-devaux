@@ -8,7 +8,7 @@
     <tbody>
     {% for marquePage in marquePages %}
         <tr>
-            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ marquePage.getUrl() }}</td>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center"><a href="/marque_page/display_detail/{{ marquePage.getId() }}">{{ marquePage.getUrl() }}</a></td>
             <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ marquePage.getCommentaire()}}</td>   
         </tr>
     {% endfor %}
