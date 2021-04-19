@@ -1,0 +1,4 @@
+php bin/console make:entity mots_clés
+new field : marque_page
+field type : relation
+link with : marque_page

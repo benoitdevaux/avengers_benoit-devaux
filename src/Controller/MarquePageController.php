@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\MarquePage;
+use App\Entity\MotsCles;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
@@ -33,12 +34,28 @@ class MarquePageController extends AbstractController
         */
         public function ajouterMarquePage(): Response
         {
+            $motCleUn = new MotsCles();
+            $motCleUn->setLibelle('MVC');
+
+            $motCleDeux = new MotsCles();
+            $motCleDeux->setLibelle('Symfony');
+
+            $motCleTrois = new MotsCles();
+            $motCleTrois->setLibelle('PHP');
+
+
             $marquePage = new MarquePage();
             $marquePage->setUrl("https://symfony.com");
             $marquePage->setDateCreation(new \DateTime());
             $marquePage->setCommentaire("Vers le site de Symfony");
+            $marquePage->addMotsCle($motCleUn);
+            $marquePage->addMotsCle($motCleDeux);
+            $marquePage->addMotsCle($motCleTrois);
             
             $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($motCleUn);
+            $entityManager->persist($motCleDeux);
+            $entityManager->persist($motCleTrois);
             $entityManager->persist($marquePage);
             $entityManager->flush();
             
@@ -58,7 +75,8 @@ class MarquePageController extends AbstractController
                 'id' => $marquePage->getId(),
                 'url' => $marquePage->getUrl(),
                 'dateCreation' => $marquePage->getDateCreation()->format('Y-m-d'),
-                'commentaire' => $marquePage->getCommentaire()
+                'commentaire' => $marquePage->getCommentaire(),
+                'motsCles' => $marquePage->getMotsCles()
                 ]);
             }
             
