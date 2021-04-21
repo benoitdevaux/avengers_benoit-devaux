@@ -1,0 +1,8 @@
+{% extends "./_footer.html.twig" %}
+
+{% block body %}
+    {% for flore in flores %}
+        <img src="{{ asset(flore.getPhotos()) }}" />
+        <p>{{ flore.getDescription() }}</p>
+    {% endfor %}
+{% endblock %}

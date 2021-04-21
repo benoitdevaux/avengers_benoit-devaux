@@ -1,0 +1,17 @@
+3/3
+php bin/console make:entity livre
+
+php bin/console make:entity:auteur
+reation OneToMany
+
+php bin/console make:migration
+php bin/console doctrine:migration:migrate
+
+php bin/console make:controller livre
+
+4/3
+php bin/console make:entity faune
+php bin/console make:entity flore
+php bin/console make:migration
+php bin/console doctrine:migration:migrate
+

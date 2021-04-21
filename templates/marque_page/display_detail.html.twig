@@ -1,0 +1,38 @@
+{% extends "./_footer.html.twig" %}
+
+{% block body %}
+<table  style="border-collapse: collapse; border: 2px solid #000">
+    <thead>
+        <tr>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">libellé</th>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">Valeur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Id</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ id }}</td>  
+        </tr>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Url</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ url }}</td>  
+        </tr>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Date de création</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ dateCreation }}</td>  
+        </tr>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Commentaire</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ commentaire }}</td>  
+        </tr>
+        </tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Mots clés</td> 
+                <td style="border: 1px solid #00a8c0; padding: .5rem 2rem">
+                {% for motCle in motsCles %}
+                    {{ motCle.getLibelle() }}</br>
+                {% endfor %}
+            </td>
+    </tbody>
+</table>
+<a href="{{ url("marque_page_index") }} ">Retour</a>
+{% endblock %}

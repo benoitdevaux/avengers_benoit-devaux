@@ -1,0 +1,8 @@
+{% extends "./_footer.html.twig" %}
+
+{% block body %}
+    {% for faune in faunes %}
+        <img src="{{ asset(faune.getPhoto()) }}" />
+        <p>{{ faune.getDescription() }}</p>
+    {% endfor %}
+{% endblock %}

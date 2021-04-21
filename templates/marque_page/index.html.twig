@@ -1,3 +1,6 @@
+{% extends "./_footer.html.twig" %}
+
+{% block body %}
 <table  style="border-collapse: collapse; border: 2px solid #000">
     <thead>
         <tr>
@@ -8,10 +11,10 @@
     <tbody>
     {% for marquePage in marquePages %}
         <tr>
-            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center"><a href="/marque_page/display_detail/{{ marquePage.getId() }}">{{ marquePage.getUrl() }}</a></td>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center"><a href=" {{ url("marque_page_detail", {id: marquePage.id }) }}">{{ marquePage.getUrl() }}</a></td>
             <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ marquePage.getCommentaire()}}</td>   
         </tr>
     {% endfor %}
     </tbody>
 </table>
-
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends './_footer.html.twig' %}
+
+{% block body %}
+<table  style="border-collapse: collapse; border: 2px solid #000">
+    <thead>
+        <tr>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">Livre</th>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">Année de parution</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for livre in livres %}
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center"><a href=" {{ url("livre_detail", {id: livre.id }) }}">{{ livre.getTitre() }}</a></td>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ livre.getAnneeParution() }}</td>   
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

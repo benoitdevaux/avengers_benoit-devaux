@@ -1,0 +1,34 @@
+{% extends "./_footer.html.twig" %}
+
+{% block body %}
+<table  style="border-collapse: collapse; border: 2px solid #000">
+    <thead>
+        <tr>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">libellé</th>
+            <th style="text-algin: center; background: #91d8f8; border: 2px solid #000;">Valeur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Id</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ id }}</td>  
+        </tr>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Titre</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ titre }}</td>  
+        </tr>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Année de parution</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ anneeParution }}</td>  
+        </tr>
+        <tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Nombre de page</td> 
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">{{ nbrePages }}</td>  
+        </tr>
+        </tr>
+            <td style="border: 1px solid #00a8c0; padding: .5rem 2rem; text-align: center">Auteur</td> 
+                <td style="border: 1px solid #00a8c0; padding: .5rem 2rem">{{ auteurPrenom }} {{ auteurNom }}</td>
+    </tbody>
+</table>
+<a href="{{ url("livre_index") }} ">Retour</a>
+{% endblock %}

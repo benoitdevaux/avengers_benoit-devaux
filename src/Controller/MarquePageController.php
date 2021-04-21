@@ -63,7 +63,7 @@ class MarquePageController extends AbstractController
         }
         
         /**
-        * @Route("/display_detail/{id<\d+>?1}", name="detail")
+        * @Route("/detail/{id<\d+>?1}", name="detail")
         */
         public function displayDetail($id) : Response
         {
@@ -71,7 +71,7 @@ class MarquePageController extends AbstractController
             ->getRepository(MarquePage::class)
             ->find($id);
             
-            return $this->render('marque_page/displayDetail.html.twig', [
+            return $this->render('livre/display_detail.html.twig', [
                 'id' => $marquePage->getId(),
                 'url' => $marquePage->getUrl(),
                 'dateCreation' => $marquePage->getDateCreation()->format('Y-m-d'),
