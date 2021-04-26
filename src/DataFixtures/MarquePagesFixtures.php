@@ -29,7 +29,7 @@ class MarquePagesFixtures extends Fixture
         for ($i = 0; $i < 10; $i++) {
             $commentaire = "";
             $marquePage = new MarquePage();
-            $marquePage->setUrl("https://".$mots_cles[mt_rand(0, 24)].$mots_cles[mt_rand(0, 24)]."com");
+            $marquePage->setUrl("https://".$mots_cles[mt_rand(0, 24)].$mots_cles[mt_rand(0, 24)].".com");
             $marquePage->setDateCreation(new \DateTime());
             for ($j = 0; $j < 5; $j++) {
                 $commentaire = $commentaire . " " . $mots_cles[mt_rand(0, 24)];

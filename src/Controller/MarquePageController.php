@@ -38,7 +38,7 @@ class MarquePageController extends AbstractController
             ->getRepository(MarquePage::class)
             ->find($id);
             
-            return $this->render('livre/display_detail.html.twig', [
+            return $this->render('marque_page/display_detail.html.twig', [
                 'id' => $marquePage->getId(),
                 'url' => $marquePage->getUrl(),
                 'dateCreation' => $marquePage->getDateCreation()->format('Y-m-d'),
