@@ -30,39 +30,6 @@ class MarquePageController extends AbstractController
         }
         
         /**
-        * @Route("/ajouter", name="add")
-        */
-        public function ajouterMarquePage(): Response
-        {
-            $motCleUn = new MotsCles();
-            $motCleUn->setLibelle('MVC');
-
-            $motCleDeux = new MotsCles();
-            $motCleDeux->setLibelle('Symfony');
-
-            $motCleTrois = new MotsCles();
-            $motCleTrois->setLibelle('PHP');
-
-
-            $marquePage = new MarquePage();
-            $marquePage->setUrl("https://symfony.com");
-            $marquePage->setDateCreation(new \DateTime());
-            $marquePage->setCommentaire("Vers le site de Symfony");
-            $marquePage->addMotsCle($motCleUn);
-            $marquePage->addMotsCle($motCleDeux);
-            $marquePage->addMotsCle($motCleTrois);
-            
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($motCleUn);
-            $entityManager->persist($motCleDeux);
-            $entityManager->persist($motCleTrois);
-            $entityManager->persist($marquePage);
-            $entityManager->flush();
-            
-            return new Response("Marque page enregistré avec l'id ".$marquePage->getId());
-        }
-        
-        /**
         * @Route("/detail/{id<\d+>?1}", name="detail")
         */
         public function displayDetail($id) : Response

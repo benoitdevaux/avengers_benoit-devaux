@@ -25,7 +25,7 @@ class MotsCles
     private $libelle;
 
     /**
-     * @ORM\ManyToMany(targetEntity=marquePage::class, inversedBy="mots_cles")
+     * @ORM\ManyToMany(targetEntity=MarquePage::class, inversedBy="mots_cles")
      */
     private $marque_page;
 
